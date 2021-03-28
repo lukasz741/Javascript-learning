@@ -1,0 +1,96 @@
+<script>
+    function caseInSwitch(val){
+        var answer = "";
+        switch(val) {
+            case 1:  // dont have to be numbers
+                answer = "alpha";
+                break;
+            case 2:
+                answer="beta";
+                break;
+            case 3:
+                answer="gamma";
+                break;
+            // default:
+            //     answer="dedede"    
+        }
+
+        return answer;
+    }
+    console.log(caseInSwitch(2)); // if we input wrong it will write empty string(default value, as preset in line 3)
+                                                                                        //or we can write default in this situation, line 14
+
+    function isLess(a, b){
+        return a<b;  //true or false 
+    }                                                                                    
+    console.log(isLess(10,11));
+    
+    //WE CAN USE THOSE OBJECTS INSTEAD OF SWITCH FUNCTIONS:
+    var testObj = {
+        "hat": "ballcap",
+        "shirt": "jersey"
+    };
+    var hatValue = testObj.hat; //value of it "ballcap"
+    var shirtValue = testObj["shirt"]; //value of it "jersey"
+    testObj.hat = "other ballcap" //changing value of "hat" in testObj
+    testObj.newProperty = "new example property"; // or testObj["newProperty"] =...
+    //delete property:
+    delete testObj.newProperty;
+    //checks if object has property:
+    testObj.hasOwnProperty("newProperty");
+
+    //we could also do array of objects, similar to JSON files
+
+    var myStorage = {
+        "car":{
+            "in":{
+                "glove box":"maps",
+                "passenger seat":"crumbs"
+            },
+            "outside": {
+                "trunk":"jack"
+            }
+        }
+    };
+    var gloveBoxContents = myStorage.car.in["glove box"];  
+    console.log(gloveBoxContents);
+
+    //to access it in nested arrays(array of objects) we write:
+        //exampleNestedArray[0].car.in etc
+
+    //RECORD COLLECTION:, 
+            //this is NOT array of objects -> array []
+    var collection = {
+        2548: {
+            albumTitle: 'Slippery When Wet',
+            artist: 'Bon Jovi',
+            tracks: ['Let It Rock', 'You Give Love a Bad Name']
+        },
+        2468: {
+            albumTitle: '1999',
+            artist: 'Prince',
+            tracks: ['1999', 'Little Red Corvette']
+        },
+        1245: {
+            artist: 'Robert Palmer',
+            tracks: []
+        },
+        5439: {
+            albumTitle: 'ABBA Gold'
+        }
+    };
+    function updateRecords(object, id, prop, value) {
+        if (value ===""){
+            delete collection[id][prop];
+        } else if (prop === "tracks") {
+            collection[id][prop] = collection[id][prop] || []; // if there is no value set it will create empty array -> []
+            collection[id][prop].push(value);
+        } else {
+            collection[id][prop] = value;
+        }
+
+    return object;
+    }
+    console.log(updateRecords(collection, 5439, 'artist', 'ABBA'));
+
+</script>

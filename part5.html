@@ -1,0 +1,39 @@
+<script>
+    var SpaceShuttle = function(targetPlanet) {
+        this.targetPlanet = targetPlanet;
+    }
+
+    var zeus = new SpaceShuttle("Jupiter");
+    console.log(zeus.targetPlanet);
+
+    class SpaceVehicle {
+        constructor(targetX) {
+            this.targetX=targetX;
+        }
+    } 
+    var newVehicle = new SpaceVehicle("someTarget");
+    console.log(newVehicle.targetX);
+
+////////////////////////////////////////////
+
+    class Book {
+        constructor(author) {
+            this._author = author;
+        }
+    get Author(){
+        return this._author;
+        }
+    set Author(updatedAuthor){
+        this._author = updatedAuthor;
+        }
+    }
+
+    const NewWorld = new Book("an author1");
+    let author = NewWorld.author;
+    NewWorld.author = "other author2";
+    author= NewWorld.author;
+    console.log(author); // "other author2"
+    
+
+
+</script>

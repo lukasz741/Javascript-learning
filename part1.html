@@ -1,0 +1,123 @@
+<script>
+    //
+
+    /*
+    kom
+    */
+
+    var myName = "imie"; //used for whole project
+    myName = 5;
+
+    let ourName ="imie2"; //used within a "block"
+
+    const pi = 3.14; //variable that can never change 
+
+    var a; //will be null 
+    a=1; //now 1 
+
+    // a--(a-=1); a++(a+=1);
+    //a=a*5 (a*=5)
+    //a=a/5(a/=5)
+
+    addedstring = "jeden";
+    addedstring= addedstring + " i dwa";
+    console.log(addedstring);
+
+    var decimalNumber = 2.02 * 1.01;
+    console.log(decimalNumber);
+
+    console.log("quoted: \"quote\" .");
+    console.log('quoted: "quote" .');
+
+    console.log("firstline\n\tsecondline\nthirdline"); // tab added before 2nd line
+
+    console.log("the number is " + myName + ".");
+
+    console.log(addedstring.length);                 //length of string
+    console.log(addedstring[0]);                     //first letter of string
+    console.log(addedstring[addedstring.length -1]); //last letter of string
+
+    var stringWithTypo = "Rypo";
+    stringWithTypo[0] = "T";
+    console.log(stringWithTypo); //STILL "Rypo", string immutable !!!
+
+    function sentence(myNoun,myAdjective,myVerb,myAdverb){                      //simple function 
+        var result ="";
+        result = "the " + myAdjective+ " " + myNoun+ " " + myVerb+ " " + myAdverb;
+        return result;
+    }
+    console.log(sentence("dog","big","run","quickly"))
+
+    //ARRAYS
+    var array1 = ["one", 54];
+    var array2 = [ ["sth", "else"], ["another", "xyz"] ]; //2 arrays within 1 
+    var somenumbers = [1,2,3];
+    somenumbers[2] = 333; //here works ! new array will have 333 instead of 3 
+    //console.log(somenumbers);
+    
+    // appending array
+    somenumbers.push(["another", "one", 123]);
+    //console.log(somenumbers);
+    
+    // remove from array
+    var lastFromSomenumbers = somenumbers.pop(); //equals ["another", "one", 123]
+    //console.log(somenumbers);
+    //console.log(lastFromSomenumbers);
+
+    // remove, but 1st element 
+    var firstFromSomenumbers = somenumbers.shift(); //equals 1, 1st element of arr
+    //console.log(somenumbers);
+
+    // appending array, but 1st element -> .unshift()
+
+
+    //let -> accessible only within a "block"( from { to }) ; var ->only within the function :
+//     function run() {
+//   var foo = "Foo";
+//   let bar = "Bar";
+
+//   console.log(foo, bar); // Foo Bar
+
+//   {
+//     var moo = "Mooo"
+//     let baz = "Bazz"; 
+//     console.log(moo, baz); // Mooo Bazz
+//   }
+
+//   console.log(moo); // Mooo
+//   console.log(baz); // ReferenceError
+// }
+
+// run();
+
+    /*if we create variable without adding anything
+    fe 
+    a=10;
+    it will be global automatic*/
+
+    function nextInLine(arr, item){
+        
+        arr.push(item);
+        return arr.shift(); //we want to remove 1st element of arr and return its value
+        
+    }
+
+    var testArr = [1,2,3];
+
+    console.log("Before" + JSON.stringify(testArr)); //changes array to string
+    console.log(nextInLine(testArr,4));
+    console.log("after" + JSON.stringify(testArr));
+
+    /*
+    1 === 1     True    !==
+    1 === '1'   False   !==
+    1 == 1      True    !=
+    1 == '1'    True    !=
+    */
+
+    // or ||
+    // and &&
+
+
+
+</script>
